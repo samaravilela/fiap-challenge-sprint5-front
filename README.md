@@ -145,5 +145,5 @@ Este projeto foi desenvolvido para fins educacionais como parte do curso de Fron
 **Desenvolvido pela equipe EaseHC**
 
 ## 💻 Links
-link do repositorio: https://github.com/FelipeConteFerreira/SPRINT-FRONT.git
-link do video: https://youtu.be/ZX5j3uueA8k
+link do repositorio: https://github.com/samaravilela/fiap-challenge-sprint5-front
+link vercel https://vercel.com/felipe-conte-ferreiras-projects/fiap-challenge-sprint5-front
