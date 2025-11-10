@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body { height: 100%; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #3a0ca3 0%, #4895ef 100%) fixed no-repeat;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+/* Tokens do tema */
+:root {
+  --primary: #3a0ca3;
+  --primary-dark: #210155;
+  --secondary: #4895ef;
+  --danger: #ef233c;
+  --success: #10b981;
+  --text: #0f172a;
+  --muted: #475569;
+  --card-bg: #ffffff;
+  --border: rgba(2, 6, 23, 0.08);
+}
+
+/* Seções */
+.section { padding: 4rem 0; }
+.section-title { text-align: center; margin-bottom: 2rem; }
+.section-title h2 { font-size: 2rem; font-weight: 700; color: #fff; }
+.section-title p { color: rgba(255,255,255,.85); }
+
+/* Cards e botões */
+.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem; box-shadow: 0 10px 25px rgba(2,6,23,0.06); }
+.card.padded { padding: 1.5rem; }
+.btn { padding: .625rem 1rem; border-radius: 9999px; font-weight: 600; color: #fff; border: 0; cursor: pointer; transition: transform .2s ease, filter .2s ease; }
+.btn:active { transform: translateY(1px); }
+.btn-menu { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); }
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+.btn-secondary { background: linear-gradient(135deg, var(--secondary), var(--primary)); }
+.btn-danger { background: linear-gradient(135deg, var(--danger), #d90429); }
+.btn-success { background: linear-gradient(135deg, var(--success), #059669); }
+
+/* Formulário de reagendamento (combina com estilo do Contato) */
+.reschedule-form-container { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px); border-radius: 1rem; padding: 2rem; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; color: #fff; font-weight: 600; margin-bottom: .5rem; }
+.form-control { width: 100%; padding: 1rem; border-radius: .75rem; border: 1px solid rgba(255,255,255,.3); background: rgba(255,255,255,.08); color: #fff; }
+.form-control::placeholder { color: rgba(255,255,255,.6); }
+.form-control:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 4px rgba(72,149,239,.3); }
+
+/* Estilos para select */
+select.form-control {
+  background: rgba(255,255,255,.08) !important;
+  color: #fff !important;
+  transform: rotate(0deg);
+}
+select.form-control option {
+  background: #3A0CA3 !important;
+  color: #fff !important;
+}
+
+/* Estilos para selects com Tailwind */
+select {
+  color-scheme: dark;
+  transform: rotate(0deg);
+}
+select option {
+  background: #3A0CA3;
+  color: #fff;
+}
+.error-message { color: #fecaca; font-size: .875rem; margin-top: .5rem; }
+.date-input { color-scheme: dark; }
+
+/* Cabeçalho */
+header.sticky-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: rgba(0,0,0,0); border-bottom: 1px solid rgba(255,255,255,.15); color: #fff; }
+header .nav { display: flex; gap: .5rem; }
+header .nav a { padding: .5rem .75rem; border-radius: .75rem; color: #fff; font-weight: 500; }
+header .nav a:hover { background: rgba(255,255,255,0.12); }
+
+/* Rodapé */
+footer.site-footer { border-top: 1px solid rgba(255,255,255,.15); padding: 2rem 0; color: rgba(255,255,255,.85); }
+
+/* Seção hero */
+.hero {
+  padding: 6rem 0;
+  color: #fff;
+  position: relative;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+}
+.hero p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Cards de estatísticas no hero */
+.stat-cards { display: grid; gap: 0.75rem; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (min-width: 640px) { .stat-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  transition: transform .3s ease, background .3s ease;
+  min-width: 220px;
+}
+.stat-card:hover { transform: translateY(-10px); background: rgba(255,255,255,.2); }
+
+/* Seção de soluções */
+.solutions {
+  color: #fff;
+}
+.solutions .section-title {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.solutions .section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.solutions .section-title p {
+  color: rgba(255, 255, 255, 0.85);
+}
+.solution-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.solution-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.solution-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.12);
+}
+.solution-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.solutions h3 { font-weight: 600; margin: 0.25rem 0 0.5rem; }
+.solutions p { color: rgba(255, 255, 255, 0.9); }
+
+/* Seção como funciona */
+#features {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #3a0ca3, #4895ef);
+}
+#features .section-title { text-align: left; margin-bottom: 1.5rem; }
+#features .section-title h2 { font-size: 1.75rem; font-weight: 600; color: #fff; }
+#features .section-title p { color: rgba(255,255,255,.9); }
+#features .grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (min-width: 768px) {
+  #features .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+#features .card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  color: #fff;
+}
+#features .card h3 { color: #fff; margin: 0 0 .25rem 0; }
+#features .card p { color: rgba(255,255,255,.9); }
+#features .step-number {
+  width: 36px; height: 36px; border-radius: 9999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #3a0ca3, #4895ef);
+  color: #fff; font-weight: 600; margin-bottom: .5rem;
+}
+
+/* Team section overrides: transparent cards */
+.team-section .team-card {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.0);
+  box-shadow: none;
+}
