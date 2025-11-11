@@ -139,14 +139,19 @@ class ApiService {
       }
 
       // Tratamento específico para "Failed to fetch" e erros de rede
-      if (error.message === 'Failed to fetch' || error.name === 'TypeError' || error.message?.includes('fetch') || error.message?.includes('ERR_CONNECTION_REFUSED')) {
+      if (
+        error.message === 'Failed to fetch' ||
+        error.name === 'TypeError' ||
+        error.message?.includes('fetch') ||
+        error.message?.includes('ERR_CONNECTION_REFUSED')
+      ) {
         return {
           data: null,
           status: 0,
           message: `❌ ERRO DE CONEXÃO: Não foi possível conectar ao backend.
 
 🔧 SOLUÇÕES:
-1. Verifique se o backend Java está rodando na porta 8080
+1. Verifique se o backend Java está ativo
 2. Confirme que a URL está correta: ${url}
 3. Verifique se não há firewall bloqueando a conexão
 4. Teste acessando diretamente no navegador: ${url}
@@ -303,14 +308,19 @@ class ApiService {
         }
       }
 
-      if (error.message === 'Failed to fetch' || error.name === 'TypeError' || error.message?.includes('fetch') || error.message?.includes('ERR_CONNECTION_REFUSED')) {
+      if (
+        error.message === 'Failed to fetch' ||
+        error.name === 'TypeError' ||
+        error.message?.includes('fetch') ||
+        error.message?.includes('ERR_CONNECTION_REFUSED')
+      ) {
         return {
           data: null,
           status: 0,
           message: `❌ ERRO DE CONEXÃO: Não foi possível conectar ao backend.
 
 🔧 SOLUÇÕES:
-1. Verifique se o backend Java está rodando na porta 8080
+1. Verifique se o backend Java está ativo
 2. Confirme que a URL está correta: ${url}
 3. Verifique se não há firewall bloqueando a conexão
 4. Teste acessando diretamente no navegador: ${url}
