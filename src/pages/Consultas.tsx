@@ -144,11 +144,11 @@ export default function Consultas() {
 
       if (mensagensErro.length > 0) {
         console.warn('[Consultas] Problemas ao carregar dados auxiliares:', mensagensErro.join(' '))
-        setAuxError('Não foi possível carregar todos os dados auxiliares. Tente novamente.')
+        setAuxError(null)
       }
     } catch (err: any) {
       console.error('[Consultas] Erro ao carregar dados auxiliares:', err)
-      setAuxError('Não foi possível carregar os dados auxiliares. Tente novamente.')
+      setAuxError(null)
     } finally {
       setAuxLoading(false)
     }
