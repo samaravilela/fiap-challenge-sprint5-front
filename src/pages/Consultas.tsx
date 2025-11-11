@@ -70,13 +70,13 @@ export default function Consultas() {
       } else {
         console.error('[Consultas] Falha ao carregar consultas:', response.message)
         setConsultas([])
-        setError('Sistema fora do ar. Tente novamente mais tarde.')
+        setError('Não foi possível carregar as consultas. Tente novamente.')
         setConnectionStatus('disconnected')
       }
     } catch (err: any) {
       console.error('[Consultas] Erro ao conectar com o servidor:', err)
       setConsultas([])
-      setError('Sistema fora do ar. Tente novamente mais tarde.')
+      setError('Não foi possível carregar as consultas. Tente novamente.')
       setConnectionStatus('disconnected')
     } finally {
       setLoadingConsultas(false)
@@ -144,11 +144,11 @@ export default function Consultas() {
 
       if (mensagensErro.length > 0) {
         console.warn('[Consultas] Problemas ao carregar dados auxiliares:', mensagensErro.join(' '))
-        setAuxError('Sistema fora do ar. Tente novamente mais tarde.')
+        setAuxError('Não foi possível carregar todos os dados auxiliares. Tente novamente.')
       }
     } catch (err: any) {
       console.error('[Consultas] Erro ao carregar dados auxiliares:', err)
-      setAuxError('Sistema fora do ar. Tente novamente mais tarde.')
+      setAuxError('Não foi possível carregar os dados auxiliares. Tente novamente.')
     } finally {
       setAuxLoading(false)
     }
